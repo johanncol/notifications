@@ -1,12 +1,12 @@
 <?php
 
-namespace JohannDesarrollador\Notifications\Http\Controllers;
+namespace Johanncol\Notifications\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-use JohannDesarrollador\Notifications\Models\NotificacionGlobal;
+use Johanncol\Notifications\Models\NotificacionGlobal;
 
 
 class NotificacionController extends Controller

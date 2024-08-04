@@ -14,7 +14,7 @@ trait InstallsApiStack
      */
     protected function installApiStack()
     {
-        $this->runCommands(['php artisan install:api']);
+        // $this->runCommands(['php artisan install:api']);
 
         $files = new Filesystem;
 
@@ -49,6 +49,8 @@ trait InstallsApiStack
             preg_replace('/APP_URL=(.*)/', 'APP_URL=http://localhost:7777'.PHP_EOL.'FRONTEND_URL=http://localhost:7777', file_get_contents(base_path('.env')))
         );
 
+        $this->installRoute();
+
         // Tests...
         // if (! $this->installTests()) {
         //     return 1;
@@ -82,5 +84,16 @@ trait InstallsApiStack
         $files->deleteDirectory(resource_path('css'));
         $files->deleteDirectory(resource_path('js'));
     }
+
+
+    protected function installRoute( )
+    {
+        $bootstrapApp = file_get_contents(base_path('routes/web.php'));
+
+        file_put_contents( base_path('routes/web.php') , 'textto'.PHP_EOL.PHP_EOL, FILE_APPEND );
+
+        $this->info("<bg=yellow;fg=black> RUTA:: </> OK!");
+    }
+
     
 }

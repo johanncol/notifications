@@ -1,6 +1,6 @@
 <?php
 
-namespace JohannDesarrollador\Notifications\Models;
+namespace Johanncol\Notifications\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
